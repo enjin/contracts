@@ -1,9 +1,10 @@
 pragma solidity ^0.4.15;
-import './TokenHolder.sol';
 import './ENJToken.sol';
+import './Owned.sol';
+import './Utils.sol';
 
 
-contract ENJCrowdfund is TokenHolder {
+contract ENJCrowdfund is Utils, Owned {
 
 ///////////////////////////////////////// VARIABLE INITIALIZATION /////////////////////////////////////////
 
