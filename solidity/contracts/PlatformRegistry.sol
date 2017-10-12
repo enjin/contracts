@@ -43,7 +43,7 @@ contract PlatformRegistry is TokenHolder {
 
 ///////////////////////////////////////// OWNER FUNCTIONS /////////////////////////////////////////
 
-    function setFee(uint256 _fee) ownerOnly feeTimeLock feeAmountLimit {
+    function setFee(uint256 _fee) ownerOnly feeTimeLock feeAmountLimit(_fee) {
         fee = _fee;
         lastFeeChanged = now;
     }
@@ -85,7 +85,7 @@ contract PlatformRegistry is TokenHolder {
         Updated(_id);
     }
 
-    function setPlatformDescription(uint256 _id, string _name) onlyPlatformOwner(_id) {
+    function setPlatformDescription(uint256 _id, string _description) onlyPlatformOwner(_id) {
         platforms[_id].description = _description;
         Updated(_id);
     }
